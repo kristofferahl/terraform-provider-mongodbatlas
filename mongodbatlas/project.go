@@ -14,6 +14,10 @@ func resourceProject() *schema.Resource {
 		Read:   resourceProjectRead,
 		Delete: resourceProjectDelete,
 
+		Importer: &schema.ResourceImporter{
+			State: schema.ImportStatePassthrough,
+		},
+
 		Schema: map[string]*schema.Schema{
 			"org_id": &schema.Schema{
 				Type:     schema.TypeString,
